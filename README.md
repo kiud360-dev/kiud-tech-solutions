@@ -1,4 +1,4 @@
-# Kiud-Tech — Web Development Agency
+# KiudTech Solutions — Web Development Agency
 
 A premium web development agency website built with [Next.js](https://nextjs.org), React, and TailwindCSS.
 

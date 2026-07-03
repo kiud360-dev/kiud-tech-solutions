@@ -22,13 +22,6 @@ type ProcessStep = {
   description: string;
 };
 
-type TeamMember = {
-  name: string;
-  role: string;
-  bio: string;
-  initials: string;
-};
-
 const portfolioProjects: PortfolioProject[] = [
   {
     name: "EventViewz",
@@ -70,12 +63,28 @@ const portfolioProjects: PortfolioProject[] = [
     url: "https://www.kiud360.in",
     image: "/kiud360.png",
   },
+  {
+    name: "Closers With Chandan",
+    discipline: "Portfolio Site",
+    description:
+      "A portfolio site built for an expert closer who has worked with 70+ startups.",
+    url: "https://www.closerswithchandan.com/",
+    image: "/closer-chandan.png",
+  },
+  {
+    name: "Data Usage Manager",
+    discipline: "Android App",
+    description:
+      "A live mobile app on Google Play for tracking daily and monthly data usage with a clean, minimalist UI.",
+    url: "https://play.google.com/store/apps/details?id=com.rishukumarcodes.DataUsageManager",
+    image: "/data-usage-manager.svg",
+  },
 ];
 
 const services = [
   {
     number: "01",
-    title: "Web Development",
+    title: "Web & App Development",
     desc: "High-performance websites and web applications engineered to feel polished, fast, and dependable at every touchpoint.",
   },
   {
@@ -133,41 +142,14 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Fast turnaround, clean communication, and a site that finally felt aligned with the quality of our service. The polish absolutely showed.",
-    name: "Aarav Mehta",
-    role: "Brand Lead",
-    initials: "AM",
+      "The portfolio helped me reach a much wider audience quickly and positioned my closing work as premium. It definitely opened more doors and made the whole approach feel more professional.",
+    name: "Chandan",
+    role: "Expert Closer",
+    initials: "CC",
   },
 ];
 
 const testimonialLoop = [...testimonials, ...testimonials];
-
-const teamMembers: TeamMember[] = [
-  {
-    name: "Uday Pandit",
-    role: "Founder, Kiud Universe",
-    bio: "Visionary founder driving the larger direction of Kiud Universe, recognized by Apollo Group for his leadership and long-range thinking.",
-    initials: "UP",
-  },
-  {
-    name: "Krishna",
-    role: "Joint Founder",
-    bio: "Works closely with Uday to shape the company, guide major decisions, and keep the business moving with clarity and intent.",
-    initials: "K",
-  },
-  {
-    name: "Aman",
-    role: "Lead Developer",
-    bio: "Backend-focused lead developer with 2 years of experience, having shipped products used by more than 10,000 users.",
-    initials: "A",
-  },
-  {
-    name: "Rishu",
-    role: "Senior Developer",
-    bio: "Senior developer known for strong UI execution, with apps deployed to the Play Store that have crossed 15,000+ users.",
-    initials: "R",
-  },
-];
 
 const processSteps: ProcessStep[] = [
   {
@@ -254,10 +236,9 @@ export default function Home() {
               variants={navFade}
               className="flex items-center justify-between text-[0.72rem] font-semibold uppercase tracking-[-0.02em] lg:text-[0.8rem]"
             >
-              <p className="flex items-center gap-2 text-black/85">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_14px_rgba(200,255,32,0.9)]" />
-                Kiud-Tech
-              </p>
+              <a href="#top" className="flex items-center gap-3 text-black/85">
+                <img src="/kiud-logo.png" alt="Kiud logo" className="h-24 w-auto md:h-28" />
+              </a>
               <div className="flex items-center gap-6">
                 <a href="#work" className="nav-link hidden sm:block">
                   Work
@@ -289,7 +270,7 @@ export default function Home() {
                     variants={titleLetterReveal}
                     className="inline-block"
                   >
-                    KIUD-TECH
+                    KIUDTECH SOLUTIONS
                   </motion.span>
                 </span>
               </motion.h1>
@@ -332,7 +313,7 @@ export default function Home() {
                   variants={fader}
                   className="max-w-[13ch] text-left font-display text-[clamp(1.8rem,5vw,4.8rem)] font-bold uppercase leading-[0.94] tracking-[-0.06em] text-black"
                 >
-                  We build digital experiences that feel premium before a word is read.
+                  We build premium websites, web apps, and mobile product experiences that feel polished before a word is read.
                 </motion.h2>
 
                 <div>
@@ -340,7 +321,7 @@ export default function Home() {
                     variants={fader}
                     className="max-w-[32rem] text-left text-[0.92rem] leading-[1.8] text-black/62 lg:text-[1rem]"
                   >
-                    Kiud-Tech partners with brands that want more than a working website. We create sharper interfaces, clearer storytelling, and faster experiences that help businesses look credible and convert with more confidence.
+                    KiudTech Solutions partners with brands that want more than a working website or app. We create sharper interfaces, clearer storytelling, and faster experiences that help businesses look credible and convert with more confidence.
                   </motion.p>
 
                   <motion.div variants={fader} className="mt-6 flex flex-wrap gap-3">
@@ -358,52 +339,6 @@ export default function Home() {
               </div>
             </div>
           </motion.section>
-
-          <section className="pt-6 md:pt-10">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-10%" }}
-              variants={fader}
-              className="section-rule mb-10 md:mb-12"
-            >
-              <p className="font-semibold">Core team</p>
-              <span className="h-px flex-1 bg-black/8" />
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-10%" }}
-              variants={staggerContainer}
-              className="grid gap-5 md:grid-cols-2 xl:grid-cols-4 pb-6 md:pb-10"
-            >
-              {teamMembers.map((member) => (
-                <motion.article
-                  key={member.name}
-                  variants={fader}
-                  className="rounded-[1.25rem] border border-black/8 bg-[#f8f6f1] p-6 shadow-[0_14px_40px_rgba(17,17,17,0.04)]"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#141517] font-display text-[0.78rem] font-bold uppercase tracking-[0.04em] text-accent">
-                      {member.initials}
-                    </div>
-                    <div>
-                      <h3 className="font-display text-[1.02rem] font-bold uppercase tracking-[-0.04em] text-black">
-                        {member.name}
-                      </h3>
-                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-black/42">
-                        {member.role}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="mt-5 text-[0.82rem] leading-[1.72] text-black/58 lg:text-[0.88rem]">
-                    {member.bio}
-                  </p>
-                </motion.article>
-              ))}
-            </motion.div>
-          </section>
 
           <section id="services" className="pt-10 md:pt-16">
             <motion.div
@@ -549,6 +484,40 @@ export default function Home() {
               <span className="h-px flex-1 bg-black/8" />
             </motion.div>
 
+            <motion.article
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-10%" }}
+              variants={fader}
+              className="mb-10 rounded-[2rem] border border-black/8 bg-white px-8 py-10 shadow-[0_24px_80px_rgba(17,17,17,0.06)] md:px-10 lg:px-12"
+            >
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-[34rem]">
+                  <p className="text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-black/45">
+                    Featured review
+                  </p>
+                  <p className="mt-4 text-[1.95rem] font-display font-bold uppercase leading-[0.9] tracking-[-0.05em] text-black lg:text-[2.6rem]">
+                    "The portfolio helped me reach more audience and present my closing services the right way."
+                  </p>
+                  <p className="mt-5 max-w-[42rem] text-[0.94rem] leading-[1.8] text-black/65">
+                    It was the difference between being just another closer and showing up as the expert I am.
+                  </p>
+                </div>
+
+                <div className="rounded-[1.5rem] border border-black/6 bg-[#f4f5f7] p-6 text-black shadow-[0_12px_36px_rgba(17,17,17,0.08)]">
+                  <p className="font-semibold uppercase tracking-[0.18em] text-black/45">Chandan</p>
+                  <p className="mt-2 text-[0.8rem] uppercase tracking-[0.18em] text-black/60">Expert Closer</p>
+                  <div className="mt-6 flex items-center gap-3 text-[0.84rem] text-black/70">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#14213d] text-white">CC</span>
+                    <div>
+                      <p className="font-semibold">Chandan</p>
+                      <p className="text-black/50">Portfolio site helped reach 70+ startup audience</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -635,15 +604,15 @@ export default function Home() {
                   Build something that feels as good as it works.
                 </p>
                 <p className="mt-5 max-w-sm text-[0.9rem] leading-[1.8] text-white/72 lg:text-[0.96rem]">
-                  Websites, e-commerce builds, SaaS products, and brand platforms for teams that care how their work looks and performs.
+                    Websites, web apps, e-commerce builds, SaaS products, and brand platforms for teams that care how their work looks and performs.
                 </p>
                 <div className="mt-8 grid gap-3">
                   <a
-                    href="mailto:kiudev360@gmail.com"
+                    href="mailto:uday@kiudtech.com"
                     className="flex items-center justify-between rounded-[1rem] border border-white/10 bg-white/[0.04] px-4 py-3 text-[0.88rem] text-white/90 transition-colors hover:bg-white/[0.08]"
                   >
                     <span className="text-white/45">Email</span>
-                    <span>kiudev360@gmail.com</span>
+                    <span>uday@kiudtech.com</span>
                   </a>
                   <a
                     href="tel:+918595389881"
@@ -655,7 +624,7 @@ export default function Home() {
                 </div>
               </div>
               <a
-                href="mailto:kiudev360@gmail.com"
+                href="mailto:uday@kiudtech.com"
                 className="mt-8 inline-flex self-start rounded-full bg-accent px-5 py-3 text-[0.76rem] font-bold uppercase tracking-[0.04em] text-black transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Get in touch
@@ -665,7 +634,7 @@ export default function Home() {
 
           <footer className="mt-18 border-t border-black/6 pt-5 pb-2">
             <div className="flex flex-col items-center justify-between gap-3 text-[0.64rem] uppercase tracking-[0.14em] text-black/35 sm:flex-row lg:text-[0.7rem]">
-              <p>Copyright 2026 Kiud-Tech</p>
+              <p>Copyright 2026 KiudTech Solutions</p>
               <p className="text-black/28">Crafted for clarity, speed, and trust</p>
             </div>
           </footer>

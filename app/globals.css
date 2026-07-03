@@ -253,7 +253,7 @@ a {
 .project-image {
   position: relative;
   overflow: hidden;
-  background: #eae8e2;
+  background: #0f172a;
   transition: box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
 }

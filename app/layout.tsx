@@ -13,9 +13,13 @@ const displayFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Kiud-Tech — Web Development Agency",
+  title: "KiudTech Solutions",
   description:
-    "Kiud-Tech is a premium web development agency crafting high-performance websites, web apps, and digital experiences that move businesses forward.",
+    "KiudTech Solutions is a premium web development agency crafting high-performance websites, web apps, and digital experiences that move businesses forward.",
+  icons: {
+    icon: "/kiud-logo.png",
+    apple: "/kiud-logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +32,10 @@ export default function RootLayout({
       lang="en"
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="icon" href="/kiud-logo.png" />
+        <link rel="apple-touch-icon" href="/kiud-logo.png" />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
