@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   description:
     "KiudTech Solutions is a premium web development agency crafting high-performance websites, web apps, and digital experiences that move businesses forward.",
   icons: {
-    icon: "/kiud-logo.png",
-    apple: "/kiud-logo.png",
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
@@ -33,8 +33,9 @@ export default function RootLayout({
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/kiud-logo.png" />
-        <link rel="apple-touch-icon" href="/kiud-logo.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
