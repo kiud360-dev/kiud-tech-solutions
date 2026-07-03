@@ -203,7 +203,7 @@ const fader = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.8, ease: "easeOut" as const },
   },
 };
 
@@ -212,7 +212,7 @@ const navFade = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: "easeOut" as const },
   },
 };
 
@@ -229,7 +229,7 @@ const titleLetterReveal = {
   hidden: { y: "100%" },
   visible: {
     y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.8, ease: "easeOut" as const },
   },
 };
 
@@ -240,7 +240,7 @@ const heroTitleReveal = {
     y: 0,
     filter: "blur(0px)",
     scale: 1,
-    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.9, ease: "easeOut" as const },
   },
 };
 
@@ -558,7 +558,7 @@ export default function Home() {
             >
               <motion.div
                 animate={{ x: ["0%", "-50%"] }}
-                transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+                transition={{ duration: 30, ease: "linear" as const, repeat: Infinity }}
                 className="flex w-max gap-6"
               >
                 {testimonialLoop.map((testimonial, index) => (
