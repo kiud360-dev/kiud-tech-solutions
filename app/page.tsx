@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Cpu, Target, Code2, Palette, ShoppingBag, Layers, ArrowUpRight, User } from "lucide-react";
+import { Sparkles, Cpu, Target, Code2, Palette, ShoppingBag, Layers, ArrowUpRight, User, Check, ArrowRight } from "lucide-react";
 
 type PortfolioProject = {
   name: string;
@@ -87,6 +87,11 @@ const services = [
     number: "01",
     title: "Web & App Development",
     desc: "High-performance websites and web applications engineered to feel polished, fast, and dependable at every touchpoint.",
+    bullets: [
+      "95+ Lighthouse performance scores by default",
+      "SEO-first semantic structure & clean metadata",
+      "Responsive fluid layouts with custom interactions"
+    ],
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
     icon: Code2,
   },
@@ -94,6 +99,11 @@ const services = [
     number: "02",
     title: "UI / UX Design",
     desc: "Clear, premium interfaces shaped around real user journeys, not decoration for its own sake.",
+    bullets: [
+      "Component-driven Figma design systems",
+      "Interactive prototyping & flow mapping",
+      "User research & accessibility compliance (WCAG)"
+    ],
     tech: ["Figma Systems", "User Journeys", "Wireframing", "Prototypes"],
     icon: Palette,
   },
@@ -101,6 +111,11 @@ const services = [
     number: "03",
     title: "E-Commerce",
     desc: "Custom storefronts and modern commerce builds designed to earn trust quickly and convert consistently.",
+    bullets: [
+      "Headless Shopify setups & custom checkouts",
+      "Stripe payment flow & cart optimization",
+      "Instant page transitions & fast catalog filtering"
+    ],
     tech: ["Custom Cart Flows", "Stripe / Shopify", "Conversion Audits", "Headless"],
     icon: ShoppingBag,
   },
@@ -108,6 +123,11 @@ const services = [
     number: "04",
     title: "SaaS Products",
     desc: "Scalable product experiences for startups and teams that need structure, speed, and long-term clarity.",
+    bullets: [
+      "Secure dashboard interfaces & role access",
+      "Real-time analytics, data feeds, & charting",
+      "Scalable database structures & API designs"
+    ],
     tech: ["Dashboard UI", "API Integrations", "Database Architecture", "Auth Systems"],
     icon: Layers,
   },
@@ -258,13 +278,15 @@ export default function Home() {
                 <a href="#about" className="nav-link hidden sm:block">
                   About
                 </a>
-                <a href="#contact" className="inline-flex items-center gap-2 leading-none transition-transform duration-300 hover:-translate-y-0.5">
+                 <a href="#contact" className="inline-flex items-center gap-2 leading-none transition-transform duration-300 hover:-translate-y-0.5">
                   <span className="text-right">
                     Let&apos;s
                     <br />
                     talk
                   </span>
-                  <span className="case-arrow">-&gt;</span>
+                  <span className="case-arrow">
+                    <ArrowRight className="h-3 w-3" />
+                  </span>
                 </a>
               </div>
             </motion.nav>
@@ -419,7 +441,16 @@ export default function Home() {
                   </h3>
                   <p className="service-desc">{svc.desc}</p>
 
-                  <div className="mt-6 flex flex-wrap gap-1.5 pt-4 border-t border-black/5">
+                  <ul className="mt-4 space-y-2 border-t border-black/5 pt-4">
+                    {svc.bullets.map((bullet) => (
+                      <li key={bullet} className="flex items-start gap-2 text-[0.72rem] text-black/60">
+                        <Check className="h-3.5 w-3.5 text-accent-deep mt-0.5 flex-shrink-0" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-5 flex flex-wrap gap-1.5 pt-4 border-t border-black/5">
                     {svc.tech.map((t) => (
                       <span key={t} className="rounded-full bg-black/[0.04] px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.04em] text-black/50 transition-colors group-hover:bg-accent/15 group-hover:text-black">
                         {t}
@@ -478,7 +509,7 @@ export default function Home() {
                       </p>
                     </div>
                     <span className="case-arrow mt-1 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                      -&gt;
+                      <ArrowUpRight className="h-3 w-3" />
                     </span>
                   </div>
                   <p className="mt-1 px-1 text-[0.72rem] leading-[1.65] text-black/50 lg:text-[0.8rem]">
@@ -523,7 +554,7 @@ export default function Home() {
                       </p>
                     </div>
                     <span className="case-arrow mt-1 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                      -&gt;
+                      <ArrowUpRight className="h-3 w-3" />
                     </span>
                   </div>
                   <p className="mt-1 px-1 text-[0.72rem] leading-[1.65] text-black/50 lg:text-[0.8rem]">
