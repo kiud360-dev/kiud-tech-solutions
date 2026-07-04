@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Sparkles, Cpu, Target, Code2, Palette, ShoppingBag, Layers, ArrowUpRight, User } from "lucide-react";
 
 type PortfolioProject = {
   name: string;
@@ -86,21 +87,29 @@ const services = [
     number: "01",
     title: "Web & App Development",
     desc: "High-performance websites and web applications engineered to feel polished, fast, and dependable at every touchpoint.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+    icon: Code2,
   },
   {
     number: "02",
     title: "UI / UX Design",
     desc: "Clear, premium interfaces shaped around real user journeys, not decoration for its own sake.",
+    tech: ["Figma Systems", "User Journeys", "Wireframing", "Prototypes"],
+    icon: Palette,
   },
   {
     number: "03",
     title: "E-Commerce",
     desc: "Custom storefronts and modern commerce builds designed to earn trust quickly and convert consistently.",
+    tech: ["Custom Cart Flows", "Stripe / Shopify", "Conversion Audits", "Headless"],
+    icon: ShoppingBag,
   },
   {
     number: "04",
     title: "SaaS Products",
     desc: "Scalable product experiences for startups and teams that need structure, speed, and long-term clarity.",
+    tech: ["Dashboard UI", "API Integrations", "Database Architecture", "Auth Systems"],
+    icon: Layers,
   },
 ];
 
@@ -142,10 +151,10 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The portfolio helped me reach a much wider audience quickly and positioned my closing work as premium. It definitely opened more doors and made the whole approach feel more professional.",
-    name: "Chandan",
-    role: "Expert Closer",
-    initials: "CC",
+      "The digital platform has helped us support thousands of student entrepreneurs and coordinate operations with absolute clarity.",
+    name: "Chandan Tiwari",
+    role: "Director, EDC India",
+    initials: "CT",
   },
 ];
 
@@ -297,44 +306,83 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-15%" }}
-            variants={staggerContainer}
-            className="py-16 md:py-24 lg:py-30"
+            variants={fader}
+            className="py-16 md:py-24 lg:py-32"
           >
-            <div className="mx-auto max-w-[1160px] rounded-[1.5rem] border border-black/8 bg-[#f8f6f1] px-6 py-8 shadow-[0_18px_60px_rgba(17,17,17,0.05)] md:px-10 md:py-12 lg:px-14">
-              <motion.p
-                variants={fader}
-                className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-black/45"
-              >
-                About
-              </motion.p>
+            <div className="mx-auto max-w-[1160px] rounded-[2rem] border border-black/8 bg-white px-6 py-8 shadow-[0_18px_60px_rgba(17,17,17,0.05)] md:px-10 md:py-12 lg:px-14 lg:py-16">
+              <div className="flex items-center justify-between border-b border-black/6 pb-6">
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-black/45">
+                  About KiudTech
+                </p>
+                <span className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-black/30">
+                  Est. 2024
+                </span>
+              </div>
 
-              <div className="mt-6 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
-                <motion.h2
-                  variants={fader}
-                  className="max-w-[13ch] text-left font-display text-[clamp(1.8rem,5vw,4.8rem)] font-bold uppercase leading-[0.94] tracking-[-0.06em] text-black"
-                >
+              <div className="mt-8">
+                <h2 className="text-left font-display text-[clamp(1.8rem,4.2vw,3.6rem)] font-bold uppercase leading-[1.0] tracking-[-0.05em] text-black max-w-[42ch]">
                   We build premium websites, web apps, and mobile product experiences that feel polished before a word is read.
-                </motion.h2>
+                </h2>
+              </div>
 
-                <div>
-                  <motion.p
-                    variants={fader}
-                    className="max-w-[32rem] text-left text-[0.92rem] leading-[1.8] text-black/62 lg:text-[1rem]"
-                  >
-                    KiudTech Solutions partners with brands that want more than a working website or app. We create sharper interfaces, clearer storytelling, and faster experiences that help businesses look credible and convert with more confidence.
-                  </motion.p>
+              <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12 border-t border-black/6 pt-10">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-black/45">
+                    <Sparkles className="h-4 w-4" />
+                    <h3 className="text-[0.75rem] font-bold uppercase tracking-[0.12em] text-black/40">Philosophy</h3>
+                  </div>
+                  <p className="text-[0.88rem] leading-[1.65] text-black/60">
+                    We believe premium experiences are built on details. From animation choreography to load performance, every pixel and line of code should feel intentional, fast, and satisfying.
+                  </p>
+                </div>
 
-                  <motion.div variants={fader} className="mt-6 flex flex-wrap gap-3">
-                    <span className="rounded-full border border-black/10 bg-white px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-black/60">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-black/45">
+                    <Cpu className="h-4 w-4" />
+                    <h3 className="text-[0.75rem] font-bold uppercase tracking-[0.12em] text-black/40">Core Expertise</h3>
+                  </div>
+                  <ul className="space-y-2 text-[0.88rem] font-medium text-black/70">
+                    <li className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                      React & Next.js Ecosystems
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                      Responsive UI & Animation
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                      E-Commerce Storefronts
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                      Minimalist Mobile Apps
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-black/45">
+                      <Target className="h-4 w-4" />
+                      <h3 className="text-[0.75rem] font-bold uppercase tracking-[0.12em] text-black/40">Partnership</h3>
+                    </div>
+                    <p className="text-[0.88rem] leading-[1.65] text-black/60">
+                      KiudTech Solutions partners with brands that want more than a working website or app. We create sharper interfaces, clearer storytelling, and faster experiences that help businesses look credible and convert with more confidence.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2.5 pt-1">
+                    <span className="rounded-full border border-black/8 bg-paper px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.06em] text-black/65 hover:bg-black/5 transition-colors cursor-default">
                       Strategy-led
                     </span>
-                    <span className="rounded-full border border-black/10 bg-white px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-black/60">
+                    <span className="rounded-full border border-black/8 bg-paper px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.06em] text-black/65 hover:bg-black/5 transition-colors cursor-default">
                       Conversion-aware
                     </span>
-                    <span className="rounded-full border border-black/10 bg-white px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-black/60">
+                    <span className="rounded-full border border-black/8 bg-paper px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.06em] text-black/65 hover:bg-black/5 transition-colors cursor-default">
                       Built to scale
                     </span>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -346,9 +394,9 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-10%" }}
               variants={fader}
-              className="section-rule border-t border-black/6 pt-6 md:pt-8"
+              className="flex items-center gap-4 border-t border-black/6 pt-6 md:pt-8"
             >
-              <p className="font-semibold">What we do</p>
+              <h2 className="text-[1rem] md:text-[1.2rem] lg:text-[1.3rem] font-bold uppercase tracking-[0.18em] text-black/80">What we do</h2>
               <span className="h-px flex-1 bg-black/8" />
             </motion.div>
 
@@ -360,10 +408,24 @@ export default function Home() {
               className="grid gap-4 md:grid-cols-2"
             >
               {services.map((svc) => (
-                <motion.article key={svc.number} variants={fader} className="service-card">
-                  <span className="service-num">{svc.number}</span>
-                  <h3 className="service-title">{svc.title}</h3>
+                <motion.article key={svc.number} variants={fader} className="service-card group">
+                  <div className="flex justify-between items-start">
+                    <span className="service-num">{svc.number}</span>
+                    <svc.icon className="h-5 w-5 text-black/25 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                  </div>
+                  <h3 className="service-title flex items-center justify-between gap-2">
+                    {svc.title}
+                    <ArrowUpRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-black/50" />
+                  </h3>
                   <p className="service-desc">{svc.desc}</p>
+
+                  <div className="mt-6 flex flex-wrap gap-1.5 pt-4 border-t border-black/5">
+                    {svc.tech.map((t) => (
+                      <span key={t} className="rounded-full bg-black/[0.04] px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.04em] text-black/50 transition-colors group-hover:bg-accent/15 group-hover:text-black">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </motion.article>
               ))}
             </motion.div>
@@ -375,9 +437,9 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-10%" }}
               variants={fader}
-              className="section-rule mb-10 md:mb-12"
+              className="flex items-center gap-4 mb-10 md:mb-12"
             >
-              <p className="font-semibold">Selected work</p>
+              <h2 className="text-[1rem] md:text-[1.2rem] lg:text-[1.3rem] font-bold uppercase tracking-[0.18em] text-black/80">Selected work</h2>
               <span className="h-px flex-1 bg-black/8" />
             </motion.div>
 
@@ -478,9 +540,9 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-10%" }}
               variants={fader}
-              className="section-rule mb-10 md:mb-12"
+              className="flex items-center gap-4 mb-10 md:mb-12"
             >
-              <p className="font-semibold">What clients say</p>
+              <h2 className="text-[1rem] md:text-[1.2rem] lg:text-[1.3rem] font-bold uppercase tracking-[0.18em] text-black/80">What clients say</h2>
               <span className="h-px flex-1 bg-black/8" />
             </motion.div>
 
@@ -489,29 +551,36 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-10%" }}
               variants={fader}
-              className="mb-10 rounded-[2rem] border border-black/8 bg-white px-8 py-10 shadow-[0_24px_80px_rgba(17,17,17,0.06)] md:px-10 lg:px-12"
+              className="mx-auto max-w-[1160px] mb-10 rounded-[2rem] border border-black/8 bg-white px-8 py-10 shadow-[0_24px_80px_rgba(17,17,17,0.06)] md:px-10 lg:px-12"
             >
-              <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                <div className="max-w-[34rem]">
+              <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:items-center">
+                <div className="max-w-[38rem]">
                   <p className="text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-black/45">
                     Featured review
                   </p>
-                  <p className="mt-4 text-[1.95rem] font-display font-bold uppercase leading-[0.9] tracking-[-0.05em] text-black lg:text-[2.6rem]">
-                    "The portfolio helped me reach more audience and present my closing services the right way."
+                  <p className="mt-4 text-[1.95rem] font-display font-bold uppercase leading-[0.95] tracking-[-0.05em] text-black lg:text-[2.6rem]">
+                    "The digital platform has helped us support thousands of student entrepreneurs and coordinate operations with absolute clarity."
                   </p>
-                  <p className="mt-5 max-w-[42rem] text-[0.94rem] leading-[1.8] text-black/65">
-                    It was the difference between being just another closer and showing up as the expert I am.
+                  <p className="mt-5 text-[0.94rem] leading-[1.8] text-black/65">
+                    It was the difference between running manual operations and showing up as a truly modern hub for innovation and growth.
                   </p>
                 </div>
 
-                <div className="rounded-[1.5rem] border border-black/6 bg-[#f4f5f7] p-6 text-black shadow-[0_12px_36px_rgba(17,17,17,0.08)]">
-                  <p className="font-semibold uppercase tracking-[0.18em] text-black/45">Chandan</p>
-                  <p className="mt-2 text-[0.8rem] uppercase tracking-[0.18em] text-black/60">Expert Closer</p>
-                  <div className="mt-6 flex items-center gap-3 text-[0.84rem] text-black/70">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#14213d] text-white">CC</span>
+                <div className="justify-self-end rounded-[1.8rem] border border-white/10 bg-[#111111] p-6 text-white shadow-[0_20px_50px_rgba(0,0,0,0.25)] w-full max-w-[320px] relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                  <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent/20 rounded-full blur-xl pointer-events-none" />
+
+                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/40">Verified Review</p>
+                  <p className="mt-2 font-display text-[1.3rem] font-bold uppercase tracking-[-0.03em] leading-tight text-white">Chandan Tiwari</p>
+                  <p className="text-[0.72rem] uppercase tracking-[0.12em] text-accent font-semibold mt-1">Director, EDC India</p>
+
+                  <div className="mt-6 flex items-center gap-3.5 border-t border-white/10 pt-5">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-accent text-black shadow-[0_0_15px_rgba(200,255,32,0.3)] flex-shrink-0">
+                      <User className="h-5 w-5" />
+                    </span>
                     <div>
-                      <p className="font-semibold">Chandan</p>
-                      <p className="text-black/50">Portfolio site helped reach 70+ startup audience</p>
+                      <p className="text-[0.74rem] text-white/60 leading-relaxed">
+                        Building entrepreneurship hubs across universities.
+                      </p>
                     </div>
                   </div>
                 </div>

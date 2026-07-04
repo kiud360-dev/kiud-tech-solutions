@@ -195,8 +195,8 @@ a {
 }
 
 .service-card:hover {
-  background: #edebe5;
-  box-shadow: inset 0 0 30px rgba(200, 255, 32, 0.04);
+  background: color-mix(in srgb, var(--accent) 10%, var(--paper));
+  box-shadow: inset 0 0 30px rgba(200, 255, 32, 0.06);
 }
 
 .service-num {
